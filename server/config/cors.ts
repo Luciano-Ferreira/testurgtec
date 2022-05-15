@@ -104,6 +104,7 @@ const corsConfig: CorsConfig = {
     'expires',
     'last-modified',
     'pragma',
+    'X-Total-Count',
   ],
 
   /*

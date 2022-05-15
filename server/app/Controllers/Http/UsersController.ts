@@ -27,6 +27,7 @@ export default class UsersController {
     user.birthDate = body.birthDate
     user.email = body.email
     user.active = body.active
+    user.department = body.department
 
     await user.save()
 

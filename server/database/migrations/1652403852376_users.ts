@@ -11,8 +11,9 @@ export default class Users extends BaseSchema {
       table.dateTime('birth_date').notNullable()
       table.string('email').notNullable()
       table.enu('active', ['active', 'inactive']).notNullable().defaultTo('active')
-      table.integer('deparment_id').unsigned().references('departments.id')
       table.timestamp('created_at', { useTz: true })
+      table.integer('department_id').unsigned().references('departments.id')
+      table.string('department', 255).notNullable()
     })
   }
 

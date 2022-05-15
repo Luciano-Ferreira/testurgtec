@@ -1,10 +1,9 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
-import Department from './Department'
+import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class User extends BaseModel {
-  @hasOne(() => Department)
-  public departmentId: HasOne<typeof Department>
+  @column()
+  public departmentId: number
 
   @column({ isPrimary: true })
   public id: number
@@ -26,4 +25,7 @@ export default class User extends BaseModel {
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
+
+  @column()
+  public department: string
 }
