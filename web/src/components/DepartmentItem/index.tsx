@@ -20,6 +20,15 @@ const DepartmentItem: React.FC<DepartmentItemProps> = ({ department }) => {
         "'Criado em' dd 'de' MMMM 'de' yyyy",
         { locale: ptBR }
       );
+
+      async function handleDelete(department: Department) {
+        try {
+            await api.delete(`department/${department.id}`)
+            alert(`${department.department} deletado com sucesso.`)
+        } catch (err) {
+            alert('erro ao tentar excluir')
+        }
+    }
        
     // delete 
     // update
@@ -37,7 +46,7 @@ const DepartmentItem: React.FC<DepartmentItemProps> = ({ department }) => {
 
             <div className='button-container'>
                 <button className='bg-blue-500 rounded-md text-white w-40 h-10'>Atualizar</button>
-                <button className='bg-red-500 rounded-md text-white w-40 h-10'>Remover</button>
+                <button className='bg-red-500 rounded-md text-white w-40 h-10' onClick={() => handleDelete(department)}>Remover</button>
             </div>
         </article>
     );

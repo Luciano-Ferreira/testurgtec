@@ -12,6 +12,18 @@ function EmployeersList() {
     const [department, setDepartment] = useState('');
     const [createdAt, setCreatedAt] = useState('');
 
+    useEffect(() => {
+        api.get('departments', {
+             params: {
+                 id,
+                 department,
+                 createdAt
+             }
+         }).then(response =>
+             setDepartments(response.data.data)
+         )
+     }, [departments])
+
     async function searchDepartments(e: FormEvent) {
         e.preventDefault();
 

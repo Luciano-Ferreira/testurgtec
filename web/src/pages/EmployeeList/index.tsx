@@ -16,6 +16,21 @@ function EmployeeList() {
     const [employee, setEmployeer] = useState('');
     const [birthDate, setBirthDate] = useState('');
 
+    useEffect(() => {
+       api.get('users', {
+            params: {
+                id,
+                name,
+                gender,
+                employee,
+                email,
+                active,
+                birthDate
+            }
+        }).then(response =>
+            setEmployeers(response.data.data)
+        )
+    }, [employees])
     async function searchEmployeers(e: FormEvent) {
         e.preventDefault();
 
@@ -33,6 +48,8 @@ function EmployeeList() {
         console.log(JSON.stringify(response.data.data, null, 2))
         setEmployeers(response.data.data);
     }
+
+    
 
     return (
         <div className="w-full h-full">

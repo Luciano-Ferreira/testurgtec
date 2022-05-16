@@ -19,6 +19,15 @@ export interface EmployeeItemProps {
 
 const EmployeeItem: React.FC<EmployeeItemProps> = ({ employee }) => {
 
+    async function handleDelete(employee: Employee) {
+        try {
+            await api.delete(`user/${employee.id}`)
+            alert(`${employee.name} deletado com sucesso.`)
+        } catch (err) {
+            alert('erro ao tentar excluir')
+        }
+    }
+
     const parsedISO = parseISO(String(employee.birth_date))
     const formattedDate = format(
         parsedISO, 
@@ -40,7 +49,7 @@ const EmployeeItem: React.FC<EmployeeItemProps> = ({ employee }) => {
             </header>
             <div className='button-container'>
                 <button className='bg-blue-500 rounded-md text-white w-40 h-10'>Atualizar</button>
-                <button className='bg-red-500 rounded-md text-white w-40 h-10'>Remover</button>
+                <button className='bg-red-500 rounded-md text-white w-40 h-10' onClick={() => handleDelete(employee)}>Remover</button>
             </div>
         </article>
     );
