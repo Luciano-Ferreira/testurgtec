@@ -1,0 +1,21 @@
+.employee-item {
+    @apply bg-slate-200 border-solid border ring-1 rounded-xl truncate flex 
+}
+.employee-item header {
+    @apply py-14 px-8 flex items-center
+    
+}
+
+.employee-item header div{
+    @apply ml-10 break-words
+}
+
+
+
+.employee-item .button-container {
+    @apply flex gap-4 items-center ml-auto mr-10
+
+}
+.employee-item > p {
+    @apply py-0 px-1 text-2xl leading-10
+}

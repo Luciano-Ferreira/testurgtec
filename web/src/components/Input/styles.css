@@ -1,0 +1,19 @@
+.input-block{
+    @apply relative
+}
+
+.input-block + .inputblock {
+    @apply mt-6
+}
+
+.input-label {
+    @apply text-xl text-emerald-50
+}
+
+.input-block input {
+    @apply w-full h-20 mt-3 rounded-xl bg-slate-300 border-solid border-l-emerald-900 outline-0 py-0 px-7 text-2xl
+}
+
+.input-block:focus-within::after {
+    @apply w-[calc(100%-3.2rem)] h-[2px] bg-black absolute left-6 right-6 bottom-0
+}

@@ -1,0 +1,20 @@
+.page-header {
+    @apply flex flex-col bg-blue-800
+}
+
+.page-header .top-bar-container {
+    @apply w-4/5 mr-0 ml-11  my-auto flex justify-between items-center text-white py-6 px-0
+}
+
+.header-content {
+    @apply w-4/5 mx-auto my-12 items-center 
+}
+
+.page-header .header-content strong {
+    @apply font-bold text-6xl leading-10 text-white
+}
+
+
+.page-header .header-content p {
+    @apply max-w-md text-3xl text-white mt-10
+}
