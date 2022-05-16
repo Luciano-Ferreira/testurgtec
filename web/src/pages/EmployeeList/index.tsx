@@ -12,9 +12,9 @@ function EmployeeList() {
     const [name, setName] = useState('');
     const [gender, setGender] = useState('');
     const [email, setEmail] = useState('');
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState<'active' | ''>('active');
     const [employee, setEmployeer] = useState('');
-    const [birthDate, setBirthDate] = useState('')
+    const [birthDate, setBirthDate] = useState('');
 
     async function searchEmployeers(e: FormEvent) {
         e.preventDefault();
@@ -30,7 +30,7 @@ function EmployeeList() {
                 birthDate
             }
         });
-        console.log(JSON.stringify(response.data, null,2))
+        console.log(JSON.stringify(response.data.data, null, 2))
         setEmployeers(response.data.data);
     }
 
@@ -64,8 +64,7 @@ function EmployeeList() {
                         name="active"
                         label="Ativo"
                         defaultChecked
-
-                        onChange={(e) => { setActive(!active) }}
+                        onChange={(e) => { setActive(active) }}
                     />
                     <Input
                         type="text"
@@ -90,7 +89,7 @@ function EmployeeList() {
                     />
 
 
-                    <button className='bg-green-600 rounded-lg text-white w-40 mt-10 h-20 ml-10 justify-end' type="submit">
+                    <button className='bg-green-500 hover:bg-green-400 rounded-lg text-white w-40 mt-20 h-20 ml-10 justify-end ' type="submit">
                         Filtrar
                     </button>
                 </form>

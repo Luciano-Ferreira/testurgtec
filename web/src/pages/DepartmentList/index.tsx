@@ -53,9 +53,10 @@ function EmployeersList() {
                     />
 
 
-                    <button className='bg-green-600 rounded-lg text-white w-40 mt-10 h-20 ml-10 justify-end ' type="submit">
+                    <button className='bg-green-500 hover:bg-green-400 rounded-lg text-white w-40 mt-20 h-20 ml-10 justify-end ' type="submit">
                         Filtrar
                     </button>
+                
                 </form>
             </PageHeader>
 

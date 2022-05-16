@@ -1,10 +1,7 @@
 .input-block{
-    @apply relative
+    @apply relative mt-10
 }
 
-.input-block + .inputblock {
-    @apply mt-6
-}
 
 .input-label {
     @apply text-xl text-emerald-50

@@ -7,8 +7,8 @@ function App() {
       <nav>
         <Link to="/employees">Employees</Link> |{" "}
         <Link to="/departments">Departments</Link> |{" "}
-        <Link to="/create-employees">CreateEmployee</Link> |{" "}
-        <Link to="/create-departments">CreateDepartment</Link>
+        <Link to="/createemployee">CreateEmployee</Link> |{" "}
+        <Link to="/createdepartment">CreateDepartment</Link>
       </nav>
       <Outlet />
     </div>
